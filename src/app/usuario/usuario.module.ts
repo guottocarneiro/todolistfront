@@ -3,19 +3,22 @@ import { CommonModule } from "@angular/common";
 import { ReactiveFormsModule }  from '@angular/forms';
 
 import { LoginComponent } from "./login/login.component";
-import { LoginService } from "./login/login.service";
+import { UsuarioService } from "./usuario.service";
 import { HttpClientModule } from "@angular/common/http";
+import { RouterModule } from "@angular/router";
+import { CadastroUsuarioComponent } from "./cadastro-usuario/cadastro-usuario.component";
 
 @NgModule({
-    declarations: [ LoginComponent ],
+    declarations: [ LoginComponent, CadastroUsuarioComponent ],
     exports: [ LoginComponent ],
     imports: [ 
         CommonModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
+        RouterModule
      ],
      providers: [
-         LoginService
+         UsuarioService
      ]
 })
 export class UsuarioModule {

@@ -1,7 +1,9 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginService } from "./login.service";
 import { FormBuilder, FormGroup } from "@angular/forms";
+import { Router } from "@angular/router";
+
 import { UsuarioLogin } from "./usuario-login";
+import { UsuarioService } from "../usuario.service";
 
 @Component({
     templateUrl: './login.component.html'
@@ -11,8 +13,9 @@ export class LoginComponent implements OnInit {
     loginForm: FormGroup;
 
     constructor(
-        private loginService: LoginService,
-        private formBuilder: FormBuilder
+        private usuarioService: UsuarioService,
+        private formBuilder: FormBuilder,
+        private router: Router
         ) {}
     
     ngOnInit(): void {
@@ -24,10 +27,11 @@ export class LoginComponent implements OnInit {
 
     login() {
         const loginUser = this.loginForm.getRawValue() as UsuarioLogin;
-        this.loginService
+        this.usuarioService
             .login(loginUser)
             .subscribe( (usuario) => {
                 console.log(usuario);
+                this.router.navigate(['lista']);
             });
     }
 }
