@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder } from "@angular/forms";
 import { Router } from "@angular/router";
 
 import { UsuarioService } from "../usuario.service";
-import { Usuario } from "./usuario";
+import { UsuarioLogin } from "../usuario-login";
 
 
 @Component({
@@ -28,7 +28,7 @@ export class CadastroUsuarioComponent implements OnInit{
     }
 
     cadastro() {
-        const loginUser = this.cadastroUsuarioForm.getRawValue() as Usuario;
+        const loginUser = this.cadastroUsuarioForm.getRawValue() as UsuarioLogin;
 
         this.usuarioService.cadastro(loginUser)
             .subscribe(() => {

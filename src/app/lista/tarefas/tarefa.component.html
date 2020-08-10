@@ -7,5 +7,7 @@
             <p>Nome: {{ tarefa.nome }}</p>
             <p>Descrição: {{ tarefa.descricao }}</p>
             <p>Status: {{ tarefa.status }}</p>
+            <p><a (click)="concluir(tarefa.id)">Concluir Tarefa</a></p>
+            <p><a (click)="deletar(tarefa.id)">Deletar Tarefa</a></p>
     </li>
 </ol>

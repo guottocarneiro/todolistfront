@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { UsuarioModule } from './usuario/usuario.module';
 import { ListaModule } from './lista/lista.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListaModule } from './lista/lista.module';
     BrowserModule,
     AppRoutingModule,
     UsuarioModule,
-    ListaModule
+    ListaModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

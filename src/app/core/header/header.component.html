@@ -1,0 +1,6 @@
+<header class="fixed-top">
+        <div *ngIf="(user$ | async) as usuario">
+            <a>{{ usuario.nome}}</a>
+            <a (click)="logout()">(Logout)</a>
+        </div>
+</header>

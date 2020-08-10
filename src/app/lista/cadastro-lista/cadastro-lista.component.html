@@ -1,0 +1,7 @@
+<form #form="ngForm" [formGroup]="cadastroListaForm" (submit)="cadastro()">
+    <div class="form-group">
+        <p>Nome da lista:</p>
+        <input formControlName="Nome" class="form-control">        
+    </div>
+    <button>Cadastrar</button>
+</form>
