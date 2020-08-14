@@ -17,17 +17,23 @@ export class TarefaComponent {
         private router: Router
     ) { }
 
-    concluir(idTarefa: number) {
+    concluir(idTarefa: number, idLista: number) {
         this.listaService.concluirTarefa(idTarefa)
             .subscribe(() => {
-                this.router.navigate(['/lista']);
+                const indiceTarefaAlterada = this.tarefas.map(x => x.Id).indexOf(idTarefa);
+                console.log(indiceTarefaAlterada);
+                this.tarefas[indiceTarefaAlterada].Status = true;
+                //this.router.navigate(['/lista', idLista]);
             });
     }
 
-    deletar(idTarefa: number) {
+    deletar(idTarefa: number, idLista: number) {
         this.listaService.deleteTarefa(idTarefa)
             .subscribe(() => {
-                this.router.navigate(['/lista']);
+                const indiceTarefaExcluida = this.tarefas.map(x => x.Id);
+                console.log(indiceTarefaExcluida);
+                //this.tarefas.splice(indiceTarefaExcluida,1);
+                //this.router.navigate(['/lista', idLista]);
             });
     }
 

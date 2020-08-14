@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <form #form="ngForm" [formGroup]="loginForm" class="form" (submit)="login()">
         <div class="form-group">
             <p>Login:</p>
@@ -8,7 +8,11 @@
             <p>Senha:</p>
             <input formControlName="senhaUsuario" type="password"  class="form-control">
         </div>
-        <button>Logar</button>
+        <div class="form-group">
+            <button class="btn btn-primary">Logar</button>
+            <a [routerLink]="['cadastro-usuario']" 
+                class="btn btn-default float-right">Crie uma conta!
+            </a>
+        </div>
     </form>
-    <p><a [routerLink]="['cadastro-usuario']">Crie uma conta!</a></p>
 </div>

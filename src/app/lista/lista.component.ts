@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
 
 import { ListaService } from "./lista.service";
-import { Tarefa } from "./tarefas/tarefa";
 import { UsuarioService } from "../usuario/usuario.service";
 import { Lista } from "./lista";
 

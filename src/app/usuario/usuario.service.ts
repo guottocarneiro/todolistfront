@@ -21,8 +21,18 @@ export class UsuarioService {
     constructor(
         private http: HttpClient,
         private localStorageService: LocalStorageService
-        ) { }
+        ) { 
+            this.localStorageService.hasToken(KEY) &&
+                this.decodeAndNotify();
+        }
 
+
+    private decodeAndNotify() {
+        const _user = JSON.parse(this.localStorageService.getToken(KEY)) as Usuario;
+        this.user = _user;
+        this.userSubject.next(_user);
+    }
+    
     login(usuarioLogin: UsuarioLogin) {
         return this.http.post(API_LOGIN + '/usuario/logar',  usuarioLogin);
     }

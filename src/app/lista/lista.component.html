@@ -1,13 +1,15 @@
 <p class="text-center text-muted" *ngIf="!listas.length"> 
     Não foram encontradas listas!
 </p>
-
-<p><a [routerLink]="['/lista/cadastro']">Cadastre uma lista!</a></p>
-
-<ol>
-    <li *ngFor="let lista of listas">
-            <p>Id: {{ lista.id }}</p>
-            <p>Nome: {{ lista.nome }}</p>
-            <p><a [routerLink]="['/lista',lista.id]">Ver tarefas!</a></p>
-    </li>
-</ol>
+<div class="container">
+    <a [routerLink]="['/lista/cadastro']">Cadastre uma lista!</a>
+</div>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let lista of listas">
+                <p>Id: {{ lista.id }}</p>
+                <p>Nome: {{ lista.nome }}</p>
+                <p><a [routerLink]="['/lista',lista.id]">Ver tarefas!</a></p>
+        </li>
+    </ul>
+</div>

@@ -12,7 +12,13 @@ import { ListaDetalhesComponent } from "./lista-detalhes/lista-detalhes.componen
 import { CadastroListaComponent } from "./cadastro-lista/cadastro-lista.component";
 
 @NgModule({
-    declarations: [ ListaComponent, TarefaComponent, CadastroTarefaComponent, ListaDetalhesComponent, CadastroListaComponent ],
+    declarations: [ 
+        ListaComponent, 
+        TarefaComponent, 
+        CadastroTarefaComponent, 
+        ListaDetalhesComponent, 
+        CadastroListaComponent 
+    ],
     exports: [  ],
     imports: [ 
         CommonModule,

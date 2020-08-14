@@ -19,8 +19,8 @@ export class HeaderComponent {
         private userService: UsuarioService,
         private router: Router
     ) { 
-        this.user = this.userService.getUsuario();
         this.user$ = this.userService.getUsuarioObservable();
+        this.user = this.userService.getUsuario();
     }
 
     logout() {

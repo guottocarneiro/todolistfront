@@ -1,6 +1,15 @@
-<header class="fixed-top">
-        <div *ngIf="(user$ | async) as usuario">
-            <a>{{ usuario.nome}}</a>
-            <a (click)="logout()">(Logout)</a>
-        </div>
-</header>
+<nav *ngIf="(user$ | async) as usuario;" class="navbar navbar-dark bg-dark">
+    
+    <a class="navbar-brand">
+    <i tabindex="0" (click)="menu.toggle()" class="fa fa-bars mr-2"></i>
+        Bem vindo(a),  {{ usuario.login }}
+    </a>
+    
+    <tl-menu #menu>
+        <ul class="list-unstyled">
+            <a [routerLink]="['lista']">Lista</a>
+        </ul>
+    </tl-menu>
+
+    <a class="navbar-brand ml-auto clickable" (click)="logout()">Logout</a>
+</nav>

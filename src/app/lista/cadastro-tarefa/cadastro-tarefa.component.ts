@@ -45,6 +45,6 @@ export class CadastroTarefaComponent implements OnInit {
         this.listaService.cadastroTarefa(tarefa)
             .subscribe(() => {
                 this.router.navigate(['/lista',this.idLista]);
-            })       
+            });       
     }
 }

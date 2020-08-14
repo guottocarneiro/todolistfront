@@ -1,11 +1,13 @@
-<form #form="ngForm" [formGroup]="cadastroTarefaForm" (submit)="cadastro()">
-    <div class="form-group">
-        <p>Nome da Tarefa:</p>
-        <input formControlName="Nome" class="form-control">        
-    </div>
-    <div class="form-group">
-        <p>Descrição da tarefa:</p>
-        <input formControlName="Descricao" class="form-control">     
-    </div>
-    <button>Cadastrar</button>
-</form>
+<div class="container">
+    <form #form="ngForm" [formGroup]="cadastroTarefaForm" (submit)="cadastro()">
+        <div class="form-group">
+            <p>Nome da Tarefa:</p>
+            <input formControlName="Nome" class="form-control">        
+        </div>
+        <div class="form-group">
+            <p>Descrição da tarefa:</p>
+            <input formControlName="Descricao" class="form-control">     
+        </div>
+        <button class="btn btn-primary">Cadastrar</button>
+    </form>
+</div>

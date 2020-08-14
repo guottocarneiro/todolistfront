@@ -37,6 +37,6 @@ export class CadastroListaComponent implements OnInit {
         this.listaService.cadastroLista(lista)
             .subscribe(() => {
                 this.router.navigate(['/lista']);
-            })       
+            });       
     }
 }

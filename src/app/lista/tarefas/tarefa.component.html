@@ -1,13 +1,23 @@
 <p class="text-center text-muted" *ngIf="!tarefas.length"> 
     Lista sem itens!
 </p>
-<ol>
-    <li *ngFor="let tarefa of tarefas">
-            <p>Id: {{ tarefa.id }}</p>
-            <p>Nome: {{ tarefa.nome }}</p>
-            <p>Descrição: {{ tarefa.descricao }}</p>
-            <p>Status: {{ tarefa.status }}</p>
-            <p><a (click)="concluir(tarefa.id)">Concluir Tarefa</a></p>
-            <p><a (click)="deletar(tarefa.id)">Deletar Tarefa</a></p>
-    </li>
-</ol>
+<div class="container">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let tarefa of tarefas">
+                <p>Id: {{ tarefa.id }}</p>
+                <p>Nome: {{ tarefa.nome }}</p>
+                <p>Descrição: {{ tarefa.descricao }}</p>
+                <p>Status: {{ tarefa.status }}</p>
+                <p *ngIf="!tarefa.status">
+                    <a class="clickable succes-anchor" 
+                        (click)="concluir(tarefa.id, tarefa.idLista)">Concluir Tarefa
+                    </a>
+                </p>
+                <p>
+                    <a class="clickable danger-anchor" 
+                        (click)="deletar(tarefa.id, tarefa.idLista)">Deletar Tarefa
+                    </a>
+                </p>
+        </li>
+    </ul>
+</div>
