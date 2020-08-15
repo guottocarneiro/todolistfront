@@ -39,7 +39,7 @@ export class CadastroTarefaComponent implements OnInit {
     cadastro() {
         const tarefa = this.cadastroTarefaForm.getRawValue() as Tarefa;
 
-        tarefa.Status = false;
+        tarefa.status = false;
         tarefa.IdLista = this.idLista;
 
         this.listaService.cadastroTarefa(tarefa)

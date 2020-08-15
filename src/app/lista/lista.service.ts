@@ -31,8 +31,8 @@ export class ListaService {
         return this.http.get(API + '/lista/' + idUsuario);
     }
 
-    concluirTarefa(idTarefa: number) {
-        return this.http.post(API + '/lista/concluirtarefa', idTarefa)
+    trocarStatusTarefa(idTarefa: number) {
+        return this.http.post(API + '/lista/trocartarefa', idTarefa)
     }
 
     deleteTarefa(idTarefa: number) {

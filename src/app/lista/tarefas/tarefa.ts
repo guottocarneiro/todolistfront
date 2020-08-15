@@ -1,7 +1,7 @@
 export interface Tarefa {
-    Id: number,
+    id: number,
     Nome: string,
     Descricao: string,
     IdLista: number,
-    Status: boolean
+    status: boolean
 }

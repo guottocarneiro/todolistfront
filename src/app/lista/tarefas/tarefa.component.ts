@@ -1,5 +1,4 @@
 import { Component, Input } from "@angular/core";
-import { Router } from "@angular/router";
 
 import { Tarefa } from "./tarefa";
 import { ListaService } from "../lista.service";
@@ -13,27 +12,22 @@ export class TarefaComponent {
     @Input() tarefas: Tarefa[] = [];
 
     constructor(
-        private listaService: ListaService,
-        private router: Router
+        private listaService: ListaService
     ) { }
 
-    concluir(idTarefa: number, idLista: number) {
-        this.listaService.concluirTarefa(idTarefa)
+    concluir(idTarefa: number) {
+        this.listaService.trocarStatusTarefa(idTarefa)
             .subscribe(() => {
-                const indiceTarefaAlterada = this.tarefas.map(x => x.Id).indexOf(idTarefa);
-                console.log(indiceTarefaAlterada);
-                this.tarefas[indiceTarefaAlterada].Status = true;
-                //this.router.navigate(['/lista', idLista]);
+                const indiceTarefaAlterada = this.tarefas.map(x => x.id).indexOf(idTarefa);
+                this.tarefas[indiceTarefaAlterada].status = !this.tarefas[indiceTarefaAlterada].status;
             });
     }
 
-    deletar(idTarefa: number, idLista: number) {
+    deletar(idTarefa: number) {
         this.listaService.deleteTarefa(idTarefa)
             .subscribe(() => {
-                const indiceTarefaExcluida = this.tarefas.map(x => x.Id);
-                console.log(indiceTarefaExcluida);
-                //this.tarefas.splice(indiceTarefaExcluida,1);
-                //this.router.navigate(['/lista', idLista]);
+                const indiceTarefaExcluida = this.tarefas.map(x => x.id).indexOf(idTarefa);
+                this.tarefas.splice(indiceTarefaExcluida,1);
             });
     }
 

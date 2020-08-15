@@ -25,6 +25,7 @@ export class ListaDetalhesComponent implements OnInit{
         this.listaService.tarefasFromList(this.idLista)
         .pipe()
         .subscribe((_tarefas) => { 
+            console.log(_tarefas);
             this.tarefas = _tarefas;
     });
     }
