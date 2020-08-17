@@ -10,6 +10,7 @@ import { ListaComponent } from "./lista.component";
 import { CadastroTarefaComponent } from "./cadastro-tarefa/cadastro-tarefa.component";
 import { ListaDetalhesComponent } from "./lista-detalhes/lista-detalhes.component";
 import { CadastroListaComponent } from "./cadastro-lista/cadastro-lista.component";
+import { EditarTarefaComponent } from "./editar-tarefa/editar-tarefa.component";
 
 @NgModule({
     declarations: [ 
@@ -17,7 +18,8 @@ import { CadastroListaComponent } from "./cadastro-lista/cadastro-lista.componen
         TarefaComponent, 
         CadastroTarefaComponent, 
         ListaDetalhesComponent, 
-        CadastroListaComponent 
+        CadastroListaComponent,
+        EditarTarefaComponent
     ],
     exports: [  ],
     imports: [ 

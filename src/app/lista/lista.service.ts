@@ -19,10 +19,6 @@ export class ListaService {
         return this.http.get<Tarefa[]>(API + '/lista/' + idLista + '/tarefas');
     }
 
-    cadastroTarefa(tarefa: Tarefa) {
-        return this.http.post(API + '/lista/createtarefa', tarefa);
-    }
-
     cadastroLista(lista: CadastroLista) {
         return this.http.post(API + '/lista/createlista', lista);
     }
@@ -31,12 +27,24 @@ export class ListaService {
         return this.http.get(API + '/lista/' + idUsuario);
     }
 
+    cadastroTarefa(tarefa: Tarefa) {
+        return this.http.post(API + '/lista/createtarefa', tarefa);
+    }
+
     trocarStatusTarefa(idTarefa: number) {
-        return this.http.post(API + '/lista/trocartarefa', idTarefa)
+        return this.http.post(API + '/lista/trocartarefa', idTarefa);
     }
 
     deleteTarefa(idTarefa: number) {
-        return this.http.post(API + '/lista/deletetarefa', idTarefa)
+        return this.http.post(API + '/lista/deletetarefa', idTarefa);
+    }
+
+    editarTarefa(tarefa: Tarefa) {
+        return this.http.post(API + '/lista/updatetarefa', tarefa);
+    }
+
+    getTarefa(idLista:number, idTarefa: number) {
+        return this.http.get(API + '/lista/' + idLista + '/tarefas/' + idTarefa);
     }
 
 }

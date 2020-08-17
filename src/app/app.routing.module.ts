@@ -9,6 +9,7 @@ import { ListaDetalhesComponent } from "./lista/lista-detalhes/lista-detalhes.co
 import { AuthGuard } from "./core/auth/auth.guard";
 import { LoginGuard } from "./core/auth/login.guard";
 import { CadastroListaComponent } from "./lista/cadastro-lista/cadastro-lista.component";
+import { EditarTarefaComponent } from "./lista/editar-tarefa/editar-tarefa.component";
 
 const routes = [
     {
@@ -58,6 +59,14 @@ const routes = [
         canActivate: [AuthGuard],
         data: {
             title: 'Cadastro Tarefa'
+        }
+    },
+    {
+        path: 'lista/:idLista/tarefa/:idTarefa',
+        component: EditarTarefaComponent,
+        canActivate: [AuthGuard],
+        data: {
+            title: 'Editar Tarefa'
         }
     }
 ];

@@ -1,7 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 .clickable {
     cursor: pointer;
-    
 }
 .succes-anchor {
     color: green !important;
@@ -9,4 +8,9 @@
 .danger-anchor {
     color: red !important;
 }
-
+.dp-inlineb {
+    display: inline-block
+}
+.float-right {
+    float: right;
+}
