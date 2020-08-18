@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { ListaService } from "../lista.service";
 import { Tarefa } from "../tarefas/tarefa";
 import { UsuarioService } from "src/app/usuario/usuario.service";
+import { AlertService } from "src/app/core/alert/alert.service";
 
 @Component({
     templateUrl: './cadastro-tarefa.component.html'
@@ -20,7 +21,8 @@ export class CadastroTarefaComponent implements OnInit {
         private usuarioService: UsuarioService,
         private formBuilder: FormBuilder,
         private router: Router,
-        private activatedRoute: ActivatedRoute
+        private activatedRoute: ActivatedRoute,
+        private alertService: AlertService
     ) {}
 
     ngOnInit(): void {
@@ -44,6 +46,7 @@ export class CadastroTarefaComponent implements OnInit {
 
         this.listaService.cadastroTarefa(tarefa)
             .subscribe(() => {
+                this.alertService.succes('Tarefa cadastrada', true);
                 this.router.navigate(['/lista',this.idLista]);
             });       
     }

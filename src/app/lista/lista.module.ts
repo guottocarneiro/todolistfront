@@ -11,6 +11,7 @@ import { CadastroTarefaComponent } from "./cadastro-tarefa/cadastro-tarefa.compo
 import { ListaDetalhesComponent } from "./lista-detalhes/lista-detalhes.component";
 import { CadastroListaComponent } from "./cadastro-lista/cadastro-lista.component";
 import { EditarTarefaComponent } from "./editar-tarefa/editar-tarefa.component";
+import { ClickableModule } from "../core/directives/clickable/clickable.module";
 
 @NgModule({
     declarations: [ 
@@ -26,7 +27,8 @@ import { EditarTarefaComponent } from "./editar-tarefa/editar-tarefa.component";
         CommonModule,
         ReactiveFormsModule,
         HttpClientModule,
-        RouterModule
+        RouterModule,
+        ClickableModule
     ],
     providers: [ ListaService ]
 })

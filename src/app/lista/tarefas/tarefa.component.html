@@ -14,12 +14,12 @@
                     <ng-template #thenBlock><p>Status: Tarefa concluída</p></ng-template>
                     <ng-template #elseBlock><p>Status: Tarefa pendente</p></ng-template>
                 <p>
-                    <a class="clickable succes-anchor" 
+                    <a makeClickable class="succes-anchor" 
                         (click)="concluir(tarefa.id)">Trocar Status
                     </a>
                 </p>
                 <p>
-                    <a class="clickable danger-anchor" 
+                    <a makeClickable class="danger-anchor" 
                         (click)="deletar(tarefa.id)">Deletar Tarefa
                     </a>
                 </p>

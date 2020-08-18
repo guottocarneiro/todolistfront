@@ -2,6 +2,7 @@ import { Component, Input } from "@angular/core";
 
 import { Tarefa } from "./tarefa";
 import { ListaService } from "../lista.service";
+import { AlertService } from "src/app/core/alert/alert.service";
 
 @Component({
     selector: 'tl-tarefa',
@@ -12,7 +13,8 @@ export class TarefaComponent {
     @Input() tarefas: Tarefa[] = [];
 
     constructor(
-        private listaService: ListaService
+        private listaService: ListaService,
+        private alertService: AlertService
     ) { }
 
     concluir(idTarefa: number) {
@@ -28,6 +30,7 @@ export class TarefaComponent {
             .subscribe(() => {
                 const indiceTarefaExcluida = this.tarefas.map(x => x.id).indexOf(idTarefa);
                 this.tarefas.splice(indiceTarefaExcluida,1);
+                this.alertService.succes('Tarefa excluída!', true);
             });
     }
 

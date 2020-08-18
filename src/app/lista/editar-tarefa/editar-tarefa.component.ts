@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { ListaService } from "../lista.service";
 import { Tarefa } from "../tarefas/tarefa";
+import { AlertService } from "src/app/core/alert/alert.service";
 
 @Component({
     templateUrl: './editar-tarefa.component.html'
@@ -20,7 +21,8 @@ export class EditarTarefaComponent implements OnInit {
         private formBuilder: FormBuilder,
         private activatedRoute: ActivatedRoute,
         private listaService: ListaService,
-        private router: Router
+        private router: Router,
+        private alertService: AlertService
         ) {  }
     
     ngOnInit(): void {
@@ -48,6 +50,7 @@ export class EditarTarefaComponent implements OnInit {
 
         this.listaService.editarTarefa(this.tarefa)
             .subscribe(() => {
+                this.alertService.succes('Tarefa alterada!', true);
                 this.router.navigate(['/lista',this.idLista]);
             });
     }

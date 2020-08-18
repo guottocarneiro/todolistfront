@@ -4,11 +4,12 @@ import { RouterModule } from "@angular/router";
 
 import { HeaderComponent } from "./header/header.component";
 import { MenuComponent } from "./menu/menu.component";
+import { AlertComponent } from "./alert/alert.component";
 
 @NgModule({
-    declarations: [ HeaderComponent, MenuComponent ],
-    exports: [ HeaderComponent ],
-    imports: [ CommonModule, RouterModule ]
+    declarations: [ HeaderComponent, MenuComponent, AlertComponent ],
+    exports: [ HeaderComponent, AlertComponent ],
+    imports: [ CommonModule, RouterModule  ]
 })
 export class CoreModule {
 
